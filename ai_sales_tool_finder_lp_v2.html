@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>営業AI診断｜あなたの仕事に効くAIを3分で発見</title>
+<meta name="description" content="営業・マーケティングの仕事に使えるAIツールを、あなたの業務に合わせて診断。">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;color:#111;background:#f7f7f5;line-height:1.7}
+.wrap{max-width:900px;margin:auto;padding:0 20px}.hero{background:#111;color:#fff;padding:72px 0 64px}.eyebrow{font-size:13px;letter-spacing:.12em;color:#aaa}.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.15;margin:14px 0 20px}.hero p{font-size:18px;color:#ddd;max-width:680px}.btn{display:inline-block;margin-top:24px;background:#fff;color:#111;padding:15px 26px;border-radius:999px;text-decoration:none;font-weight:700}
+section{padding:56px 0}.card{background:#fff;border:1px solid #e8e8e8;border-radius:20px;padding:28px;margin:16px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid .card{margin:0}h2{font-size:30px;margin:0 0 18px}h3{margin:0 0 8px}.muted{color:#666}.num{font-size:28px;font-weight:800}.quiz{background:#fff;border-radius:24px;padding:32px;box-shadow:0 10px 35px rgba(0,0,0,.06)}label{display:block;font-weight:700;margin:22px 0 8px}select{width:100%;padding:14px;border:1px solid #ccc;border-radius:10px;background:#fff;font-size:16px}.result{display:none;margin-top:28px;padding:24px;border-radius:16px;background:#f0f4ff}.result h3{font-size:24px}.result a{display:inline-block;margin-top:12px;padding:12px 18px;border-radius:10px;background:#111;color:#fff;text-decoration:none;font-weight:700}.note{font-size:12px;color:#777;margin-top:18px}.footer{padding:30px 0 50px;color:#777;font-size:12px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.hero{padding:52px 0}.hero h1{font-size:40px}}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="wrap">
+<div class="eyebrow">AI SALES TOOL FINDER</div>
+<h1>営業の仕事、<br>AIでどこまで減らせる？</h1>
+<p>あなたの業務を3つ選ぶだけ。営業・マーケティングに使いやすいAIツールを、用途別に診断します。</p>
+<a class="btn" href="#diagnosis">無料でAI診断する →</a>
+</div>
+</header>
+
+<section>
+<div class="wrap">
+<h2>営業AIは「有名だから」で選ばない。</h2>
+<p class="muted">大切なのは、あなたの仕事のどこを自動化したいか。資料作成、議事録、リサーチ、メール、広告運用など、目的によって最適なツールは変わります。</p>
+<div class="grid">
+<div class="card"><div class="num">01</div><h3>業務を選ぶ</h3><p class="muted">いま時間を使っている仕事を選択。</p></div>
+<div class="card"><div class="num">02</div><h3>AIを診断</h3><p class="muted">用途との相性が高いツールを提示。</p></div>
+<div class="card"><div class="num">03</div><h3>試してみる</h3><p class="muted">公式サイトから無料プラン等を確認。</p></div>
+</div>
+</div>
+</section>
+
+<section id="diagnosis">
+<div class="wrap">
+<h2>営業AI診断</h2>
+<div class="quiz">
+<label for="job">あなたの主な職種</label>
+<select id="job">
+<option value="sales">営業</option><option value="marketing">マーケティング</option><option value="manager">マネージャー</option><option value="other">その他</option>
+</select>
+<label for="task1">一番減らしたい業務</label>
+<select id="task1">
+<option value="proposal">提案書・資料作成</option><option value="meeting">議事録・要約</option><option value="research">リサーチ・競合調査</option><option value="mail">メール・文章作成</option>
+</select>
+<label for="task2">次に減らしたい業務</label>
+<select id="task2">
+<option value="research">リサーチ・競合調査</option><option value="proposal">提案書・資料作成</option><option value="meeting">議事録・要約</option><option value="mail">メール・文章作成</option>
+</select>
+<button class="btn" style="border:0;cursor:pointer" onclick="diagnose()">診断結果を見る →</button>
+<div id="result" class="result"></div>
+<p class="note">※この診断はツール選びの参考情報です。各サービスの料金・機能・提供条件は公式サイトでご確認ください。</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>このサイトの方針</h2>
+<div class="card">
+<p><strong>実務で使えるか。</strong>を最優先に、営業・マーケティング業務で使いやすいAIツールを比較します。ランキングだけでなく、「どんな人に向いているか」まで整理します。</p>
+</div>
+</div>
+</section>
+
+<footer class="footer"><div class="wrap">AI Sales Tool Finder / 運営者情報・広告表記は公開時に追加してください。</div></footer>
+
+<script>
+function diagnose(){
+ const a=document.getElementById('task1').value,b=document.getElementById('task2').value;
+ const r=document.getElementById('result');
+ const map={
+ proposal:{title:"提案・資料作成型",text:"資料のたたき台、構成、文章作成をAIで効率化するタイプです。生成AI・プレゼン作成AIの比較から始めるのがおすすめです。"},
+ meeting:{title:"議事録・要約型",text:"商談や会議の記録を自動化すると、毎週の工数を削減しやすいタイプです。文字起こし・議事録AIを比較してみましょう。"},
+ research:{title:"リサーチ型",text:"競合・市場・顧客調査の時間を削減しやすいタイプです。検索・リサーチに強いAIを比較するのがおすすめです。"},
+ mail:{title:"文章・メール型",text:"メール、提案文、社内文書の下書きをAI化すると効果が出やすいタイプです。文章生成AIから試すのがおすすめです。"}
+ };
+ const x=map[a]||map[b];
+ const tools={
+   proposal:[
+     ["Gamma","提案資料・プレゼン作成","AIでプレゼンやドキュメントを作成。営業提案との相性が高い候補です。","https://gamma.app/"],
+     ["AdCreative.ai","広告クリエイティブ・コピー","広告用の画像・動画・コピー制作をAIで効率化したいマーケター向け。","https://www.adcreative.ai/"]
+   ],
+   meeting:[
+     ["Notta","議事録・文字起こし","商談・会議の文字起こし、要約、翻訳をまとめて効率化。","https://www.notta.ai/"]
+   ],
+   research:[
+     ["Browse AI","Webリサーチ・データ取得","Web上の情報収集やデータ取得をノーコードで自動化する候補。","https://www.browse.ai/"],
+     ["Surfer","SEO・コンテンツリサーチ","SEO・コンテンツマーケティングの調査と最適化向け。","https://surferseo.com/"]
+   ],
+   mail:[
+     ["AiSDR","営業アウトリーチ自動化","AIを使った営業プロスペクティング・アウトリーチ向け。","https://aisdr.com/"]
+   ]
+ };
+ const picks=tools[a]||tools[b]||tools.proposal;
+ r.innerHTML="<h3>診断結果："+x.title+"</h3><p>"+x.text+"</p>"+
+   "<div style='margin-top:18px'>"+picks.map(t=>"<div style='background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px;margin-top:10px'><strong>"+t[0]+"</strong><div style='font-size:13px;color:#666;margin:3px 0 8px'>"+t[1]+"</div><div style='font-size:14px'>"+t[2]+"</div><a href='"+t[3]+"' target='_blank' rel='noopener' style='display:inline-block;margin-top:10px;padding:9px 13px;border-radius:8px;background:#111;color:#fff;text-decoration:none;font-weight:700'>公式サイトを見る →</a></div>").join("")+"</div>"+
+   "<p class='note'>※公開時には各サービスのアフィリエイトリンクへ差し替えます。現時点では公式サイトへのリンクです。</p>"
+
+ r.style.display="block";
+}
+</script>
+</body>
+</html>
