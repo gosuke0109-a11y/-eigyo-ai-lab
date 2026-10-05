@@ -66,7 +66,15 @@ section{padding:56px 0}.card{background:#fff;border:1px solid #e8e8e8;border-rad
 </div>
 </section>
 
-<footer class="footer"><div class="wrap">AI Sales Tool Finder / 運営者情報・広告表記は公開時に追加してください。</div></footer>
+<section>
+<div class="wrap">
+<h2>広告・PRについて</h2>
+<div class="card">
+<p>このサイトにはアフィリエイト広告が含まれています。掲載サービスの利用・契約によって、運営者に報酬が発生する場合があります。サービスの料金・機能・提供条件は各公式サイトをご確認ください。</p>
+</div>
+</div>
+</section>
+<footer class="footer"><div class="wrap">AI Sales Tool Finder / 広告・PR表記あり</div></footer>
 
 <script>
 function diagnose(){
@@ -81,24 +89,22 @@ function diagnose(){
  const x=map[a]||map[b];
  const tools={
    proposal:[
-     ["Gamma","提案資料・プレゼン作成","AIでプレゼンやドキュメントを作成。営業提案との相性が高い候補です。","https://gamma.app/"],
-     ["AdCreative.ai","広告クリエイティブ・コピー","広告用の画像・動画・コピー制作をAIで効率化したいマーケター向け。","https://www.adcreative.ai/"]
+     ["Doraverse","複数AIをまとめて使えるオールインワンAI","ChatGPT・Gemini・Claude・Grokなど15以上のAIを1つにまとめ、資料作成や調査などの業務を効率化したい人向け。","https://px.a8.net/svt/ejp?a8mat=4BE9CV+1NJD9U+5UU0+5YJRM"]
    ],
    meeting:[
-     ["Notta","議事録・文字起こし","商談・会議の文字起こし、要約、翻訳をまとめて効率化。","https://www.notta.ai/"]
+     ["Notta","議事録・文字起こし","商談・会議の文字起こし、要約などを効率化したい人向け。","https://www.notta.ai/"]
    ],
    research:[
-     ["Browse AI","Webリサーチ・データ取得","Web上の情報収集やデータ取得をノーコードで自動化する候補。","https://www.browse.ai/"],
-     ["Surfer","SEO・コンテンツリサーチ","SEO・コンテンツマーケティングの調査と最適化向け。","https://surferseo.com/"]
+     ["Doraverse","リサーチ・調査を含む業務全般のAI化","複数のAIを1つにまとめ、リサーチ・資料作成・文章作成などを横断的に効率化したい人向け。","https://px.a8.net/svt/ejp?a8mat=4BE9CV+1NJD9U+5UU0+5YJRM"]
    ],
    mail:[
-     ["AiSDR","営業アウトリーチ自動化","AIを使った営業プロスペクティング・アウトリーチ向け。","https://aisdr.com/"]
+     ["Doraverse","メール・文章作成を含む日常業務のAI化","メール文章、資料のたたき台、要約など、日々の「考える・書く・調べる」仕事をまとめて効率化したい人向け。","https://px.a8.net/svt/ejp?a8mat=4BE9CV+1NJD9U+5UU0+5YJRM"]
    ]
  };
  const picks=tools[a]||tools[b]||tools.proposal;
  r.innerHTML="<h3>診断結果："+x.title+"</h3><p>"+x.text+"</p>"+
    "<div style='margin-top:18px'>"+picks.map(t=>"<div style='background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px;margin-top:10px'><strong>"+t[0]+"</strong><div style='font-size:13px;color:#666;margin:3px 0 8px'>"+t[1]+"</div><div style='font-size:14px'>"+t[2]+"</div><a href='"+t[3]+"' target='_blank' rel='noopener' style='display:inline-block;margin-top:10px;padding:9px 13px;border-radius:8px;background:#111;color:#fff;text-decoration:none;font-weight:700'>公式サイトを見る →</a></div>").join("")+"</div>"+
-   "<p class='note'>※公開時には各サービスのアフィリエイトリンクへ差し替えます。現時点では公式サイトへのリンクです。</p>"
+   "<p class='note'>※このページにはアフィリエイト広告が含まれます。サービスの料金・機能・提供条件は各公式サイトでご確認ください。</p>"
 
  r.style.display="block";
 }
